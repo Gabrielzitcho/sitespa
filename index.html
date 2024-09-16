@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estágio de Psicologia</title>
+    <style>
+        body {
+            background-image: url('psicologia-y-mente.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco translúcido */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2196F3;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #2196F3;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #1976D2;
+        }
+
+        .sign-out {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #f44336;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .sign-out:hover {
+            background-color: #d32f2f;
+        }
+
+        .nav-bar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-link:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="#" class="nav-link">Login</a>
+        <a href="#" class="nav-link">Contato</a>
+    </div>
+
+    <div class="container">
+        <h1>Inicie o seu estágio de psicologia aqui.</h1>
+
+        <div class="form-group">
+            <input type="text" placeholder="Login" id="login">
+        </div>
+
+        <div class="form-group">
+            <input type="password" placeholder="Senha" id="password">
+        </div>
+
+        <button id="vamos-nessa-btn">Vamos nessa!</button>
+        <button id="cadastro-btn">Cadastre-se</button>
+    </div>
+
+    <button class="sign-out">Sign Out</button>
+
+    <script>
+        // Função de login
+        document.getElementById("vamos-nessa-btn").addEventListener("click", function() {
+            var login = document.getElementById("login").value;
+            var password = document.getElementById("password").value;
+
+            // Recupera os dados do localStorage
+            var storedName = localStorage.getItem('nome');
+            var storedPassword = localStorage.getItem('senha');
+
+            // Verifica se o login e senha estão corretos
+            if (login === storedName && password === storedPassword) {
+                window.location.href = "https://gabrielzitcho.github.io/sitespa/tela%20aluno%207.html"; // Substitua pelo link da página de formulário
+            } else {
+                alert("Login ou senha incorretos!");
+            }
+        });
+
+        document.getElementById("cadastro-btn").addEventListener("click", function() {
+            window.location.href = "https://gabrielzitcho.github.io/sitespa/cadastro%202.html"; // Substitua pelo link do site de cadastro
+        });
+
+        // Função de logout
+        document.querySelector(".sign-out").addEventListener("click", function() {
+            localStorage.removeItem('nome');
+            localStorage.removeItem('senha');
+            alert("Você foi desconectado.");
+            // Redireciona para a página de login ou inicial
+            window.location.href = "https://gabrielzitcho.github.io/sitespa/index.html"; // Substitua pelo link da página inicial
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atualização de Cadastro</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-image: url('imagem_psi_cadastro.jpg'); /* Substitua pelo caminho da sua imagem */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    h1 {
+      text-align: left;
+      color: black; /* Cor preta */
+      font-size: 1.8em; /* Tamanho da fonte do exemplo */
+      margin-bottom: 20px;
+      margin-left: 20px; /* Alinhado à esquerda, como no exemplo */
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra leve */
+    }
+
+    form {
+      width: 500px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: black; /* Cor preta */
+      font-size: 1.1em; /* Ajuste no tamanho para o exemplo */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 1em; /* Tamanho da fonte */
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 3px;
+      font-size: 1em; /* Tamanho da fonte */
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+      color: #fff;
+      padding: 1em 0;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Atualização de Cadastro</h1>
+
+  <form id="cadastro-form">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="contato">Contato:</label>
+    <input type="tel" id="contato" name="contato" placeholder="(XX) XXXX-XXXX" required>
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required>
+
+    <label for="confirma_senha">Confirma Senha:</label>
+    <input type="password" id="confirma_senha" name="confirma_senha" required>
+
+    <button type="submit">Atualizar</button>
+  </form>
+
+  <script>
+    document.getElementById('cadastro-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Exibe a mensagem de sucesso
+      alert("Perfil Atualizado com sucesso!");
+
+      // Redireciona para a página do aluno
+      window.location.href = 'https://gabrielzitcho.github.io/sitespa/tela%20aluno%207.html'; // Substitua pelo URL da tela do aluno
+    });
+  </script>
+
+</body>
+</html>
